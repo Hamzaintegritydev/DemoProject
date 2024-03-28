@@ -31,3 +31,38 @@ exports.createTest = async (req, res) => {
     res.status(500).send('Server Error');
   }
 };
+
+
+exports.updateTest = async (req, res) => {
+  try {
+    const { testId } = req.params; // Assuming testId is passed in the URL params
+    const { test_name, difficulty, category_name } = req.body;
+
+    // Find the test by its ID
+    let test = await Test.findById(testId);
+    if (!test) {
+      return res.status(404).json({ msg: 'Test not found' });
+    }
+
+    // Update test properties
+    if (test_name) test.test_name = test_name;
+    if (difficulty) test.difficulty = difficulty;
+
+    // If category_name is provided, find the category and update it
+    if (category_name) {
+      const category = await Category.findOne({ category_name });
+      if (!category) {
+        return res.status(404).json({ msg: 'Category not found' });
+      }
+      test.categories = [category._id];
+    }
+
+    // Save the updated test
+    test = await test.save();
+
+    res.json(test); // Send the updated test object in response
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};

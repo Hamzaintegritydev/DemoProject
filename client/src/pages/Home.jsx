@@ -6,6 +6,7 @@ import TestSelection from "../components/TestSelection";
 import AssesmentList from "../components/AssesmentList";
 import AllUsersList from "../components/AllUsers";
 import AttemptedAssessmentForm from "../components/AttemptedAssesment";
+import AnswerVerificationForm from "../components/VerifyAnswer";
 
 export const Home = () =>{
     const [currentPage, setCurrentPage] = useState(null);
@@ -25,6 +26,8 @@ export const Home = () =>{
             {currentPage === 'allassesment' && <AssesmentList onPageChange={handlePageChange} />}
             {currentPage === 'userassesment' && <AllUsersList onPageChange={handlePageChange} />}
             {currentPage === 'attemptedassesment' && <AttemptedAssessmentForm onPageChange={handlePageChange} />}
+            {currentPage === 'verifyanswer' && <AnswerVerificationForm onPageChange={handlePageChange} />}
+
 
 
 
@@ -37,6 +40,8 @@ export const Home = () =>{
                     <button onClick={() => handlePageChange('allassesment')}>All Assesment</button>
                     <button onClick={() => handlePageChange('userassesment')}>User Assesment</button>
                     <button onClick={() => handlePageChange('attemptedassesment')}>Attempted Assesment</button>
+                    <button onClick={() => handlePageChange('verifyanswer')}>Verify Answer</button>
+
 
 
 

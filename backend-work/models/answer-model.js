@@ -7,6 +7,11 @@ const AnswerSchema = new mongoose.Schema({
        required: true,
     },
 
+    candidateID: {
+      type: mongoose.Schema.Types.ObjectId,
+      // required: true
+    },
+
   //  user: {
   //          type: mongoose.Schema.Types.ObjectId,
    //         ref: 'User',
@@ -26,11 +31,11 @@ const AnswerSchema = new mongoose.Schema({
                 },
               ],
             
-    selected_option: {
-                    type: String,
-                    enum: ['optionA', 'optionB', 'optionC', 'optionD', 'true', 'false'],
-                  //  required: true,
-                  },
+    // selected_option: {
+    //                 type: String,
+    //                  enum: ['optionA', 'optionB', 'optionC', 'optionD', 'true', 'false'],
+    //               //  required: true,
+    //               },
                   is_correct: {
                     type: Boolean,
                     default: false,
