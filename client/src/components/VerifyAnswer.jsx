@@ -41,7 +41,7 @@ function AnswerVerificationForm() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Answer ID:
+            Answer Name:
             <input type="text" name="answer_id" value={formData.answer_id} onChange={handleChange} />
           </label>
         </div>
@@ -57,19 +57,19 @@ function AnswerVerificationForm() {
         </div>
         <div>
           <label>
-            Assessment ID:
+            Assessment Name:
             <input type="text" name="assessmentId" value={formData.assessmentId} onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
-            Test ID:
+            Test Name:
             <input type="text" name="testId" value={formData.testId} onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
-            Candidate ID:
+            Candidate Name:
             <input type="text" name="candidateId" value={formData.candidateId} onChange={handleChange} />
           </label>
         </div>

@@ -41,6 +41,8 @@ export const Home = () =>{
                     <button onClick={() => handlePageChange('userassesment')}>User Assesment</button>
                     <button onClick={() => handlePageChange('attemptedassesment')}>Attempted Assesment</button>
                     <button onClick={() => handlePageChange('verifyanswer')}>Verify Answer</button>
+                    <button onClick={() => handlePageChange('testselection')}>Test Selection</button>
+
 
 
 

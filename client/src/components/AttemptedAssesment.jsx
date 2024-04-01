@@ -39,24 +39,24 @@ function AttemptedAssessmentForm() {
       <h2>Attempt Assessment</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Assessment ID:
+          Assessment Name:
           <input type="text" value={assessmentId} onChange={(e) => setAssessmentId(e.target.value)} />
         </label>
         <br />
         <label>
-          User ID:
+          User Nmae:
           <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} />
         </label>
         <br />
         <label>
-          Candidate ID:
+          Candidate Name:
           <input type="text" value={candidateId} onChange={(e) => setCandidateId(e.target.value)} />
         </label>
         <br />
         {tests.map((test, index) => (
           <div key={index}>
             <label>
-              Test ID:
+              Test Name:
               <input type="text" value={test.test_id} onChange={(e) => handleChange(index, 'test_id', e.target.value)} />
             </label>
             <label>
