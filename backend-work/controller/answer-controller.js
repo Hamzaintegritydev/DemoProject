@@ -4,14 +4,16 @@ const Candidate = require('../models/candidate-model')
 const AttemptedAssessment = require('../models/attemted-assesment');
 const Test = require("../models/test-models")
 exports.createAnswer = async (req, res) => {
-  const { question_id, ...answerData } = req.body;
-  const question = await Question.findById(question_id);
-  if (!question) {
+  const { question_id, options } = req.body;
+  // const question = await Question.findById(question_id);
+  if (!question_id) {
     return res.status(404).json({ message: 'Cannot find question' });
   }
   const answer = new Answer({
-    ...answerData,
-    question: question._id,
+    // ...answerData,
+    options,
+    question: question_id
+    
   //  user: req.user._id,
   });
   try {

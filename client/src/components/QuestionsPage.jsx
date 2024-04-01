@@ -8,10 +8,10 @@ function QuestionsPage() {
     const [difficulty, setDifficulty] = useState('');
     const [category_name, setCategory] = useState('');
     const [options, setOptions] = useState([
-        { text: '', isCorrect: false },
-        { text: '', isCorrect: false },
-        { text: '', isCorrect: false },
-        { text: '', isCorrect: false }
+        { option: '', isCorrect: false },
+        { option: '', isCorrect: false },
+        { option: '', isCorrect: false },
+        { option: '', isCorrect: false }
     ]);
     const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ function QuestionsPage() {
 
     const handleOptionChange = (index, e) => {
         const newOptions = [...options];
-        newOptions[index].text = e.target.value;
+        newOptions[index].option = e.target.value;
         setOptions(newOptions);
     };
 

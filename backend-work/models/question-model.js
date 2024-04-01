@@ -18,6 +18,14 @@ const QuestionSchema = new mongoose.Schema({
     enum: ['easy', 'medium', 'hard'],
     required: true,
   },
+
+
+  options: [
+    {
+      text: String,
+      isCorrect: Boolean
+    }
+  ],
   // categories: [
   //   {
   //     type: mongoose.Schema.Types.ObjectId,
